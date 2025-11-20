@@ -1,0 +1,2 @@
+class Miembro(Lugar,Proyecto):
+    
