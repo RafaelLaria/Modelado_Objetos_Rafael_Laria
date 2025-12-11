@@ -34,9 +34,39 @@ class Persona:
             print(self.numero_identificacion)
         else:
             print('El numero de identificación debe tener 8 caracteres, el ultimo siendo una letra')
+    
+    def añadir_hijo(self, hijo):
+        self.hijos.append(hijo)
+        if self.sexo.lower() == 'hombre':
+            hijo.padre = self
+        
+        elif self.sexo.lower() == 'mujer':
+            hijo.madre = self
 
+    def crear_parejas(self, persona):
+        self.pareja = persona
+        persona.pareja = self
 
-    def que_es(self, persona1, persona2):
+    def que_es(self, persona2):
+        if self.padre == persona2:
+            print(f'{persona2.nombre} es el padre de {self.nombre}')
+        
+        elif self.madre == persona2:
+            print(f'{persona2.nombre} es la madre de {self.nombre}')
+        
+        elif persona2 in self.hijos:
+            if persona2.sexo.lower() == 'hombre':
+                print(f'{persona2.nombre} es hijo de {self.nombre}')
+            elif persona2.sexo.lower() == 'mujer':
+                print(f'{persona2.nombre} es hija de {self.nombre}')
+        elif self.pareja == persona2:
+            print(f'{persona2.nombre} es pareja de {self.nombre}')
+        
+        else:
+            print('Las personas no tienen ninguna relación establecida')
+
+                  
+        
         
 
         
