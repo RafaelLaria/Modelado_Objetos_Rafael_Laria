@@ -52,7 +52,7 @@ class SitioArqueologico:
     def __init__(self, nombre):
         self.nombre = nombre
 
-if __name__=='__main__'
+if __name__=='__main__':
 
     sitio = SitioArqueologico("Colina Antigua")
 
